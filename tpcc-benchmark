@@ -1,0 +1,32 @@
+
+-- simple TPCC benchmark of InnoDB using sysbench 
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=innodb 
+--mysql-db=innodb --scale=100 --tables=10 --time=300 --threads=50 prepare 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=innodb 
+--mysql-db=innodb --scale=100 --tables=10 --time=300 --threads=50 run 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=innodb 
+--mysql-db=innodb --scale=100 --tables=10 --time=300 --threads=50 cleanup 
+
+-- simple TPCC benchmark of TokuDB using sysbench 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=tokudb 
+--mysql-db=tokudb --scale=100 --tables=10 --time=300 --threads=50 prepare 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=tokudb 
+--mysql-db=tokudb --scale=100 --tables=10 --time=300 --threads=50 run 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=tokudb 
+--mysql-db=tokudb --scale=100 --tables=10 --time=300 --threads=50 cleanup 
+
+-- simple TPCC benchmark of RocksDB using sysbench 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=rocksdb 
+--mysql-db=tokudb --scale=100 --tables=10 --time=300 --threads=50 prepare 
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=rocksdb 
+--mysql-db=tokudb --scale=100 --tables=10 --time=300 --threads=50 run
+
+sysbench tpcc.lua --mysql-user=root --mysql-password=yourpassword --db-driver=mysql  --mysql_storage_engine=rocksdb 
+--mysql-db=tokudb --scale=100 --tables=10 --time=300 --threads=50 cleanup 
